@@ -7,12 +7,12 @@
 Run the ForgeRock Stack (OpenAM, OpenDJ, OpenIDM, OpenIG) on Kubernetes (k8s)
 
 
-# Contributing 
+# Contributing
 
 This repository is located at https://stash.forgerock.org/projects/DOCKER/repos/fretes/browse
-and mirrored to github at https://github.com/ForgeRock/fretes 
+and mirrored to github at https://github.com/ForgeRock/fretes
 
-Pull requests should be made on the stash repository. You will 
+Pull requests should be made on the stash repository. You will
 need a ForgeRock community account to create pull requests.
 
 
@@ -31,24 +31,32 @@ You will need ForgeRock Docker images. You can build these using the
 Dockerfiles in https://stash.forgerock.org/projects/DOCKER/repos/docker/browse
 
 If you push these images to your own registry you will need to modify the image:
-tag in the manifests. Eventually the manifests will be 
+tag in the manifests. Eventually the manifests will be
 managed by helm so that things like tags can be templated out
 
 
 # Samples:
 
-frstack - example that shows how to run OpenAM, OpenDJ, OpenIG and OpenIDM using 
+frstack - example that shows how to run OpenAM, OpenDJ, OpenIG and OpenIDM using
 persistent volumes. This is the most recent
 work - so start here.  Please see the README notes in that folder
 
 
 openidm - Run's OpenIDM with the Postgres database. Also configures an instance of OpenDJ
 
-Example:
+# Initial Startup:
 
 ```
-prepare.sh
-kubectl create -f frstack
-kubectl get pods
-kubectl get services
+scripts/create-all.sh
+kubectl --namespace=forgerock get deployments
+kubectl --namespace=forgerock get services
+kubectl --namespace=forgerock get pods
+```
+
+# Cleanup:
+
+If you want to delete everything, run
+
+```
+scripts/delete-all.sh
 ```
