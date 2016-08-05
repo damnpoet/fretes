@@ -4,6 +4,7 @@ apiVersion: v1
 kind: ReplicationController
 metadata:
   name: apache-rc
+  namespace: forgerock
 spec:
   replicas: 1
   selector:

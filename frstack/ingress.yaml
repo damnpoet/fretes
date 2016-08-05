@@ -12,6 +12,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: openam
+  namespace: forgerock
 spec:
   rules:
 # Unless you want to use hostname based ingress, it is better to leave the

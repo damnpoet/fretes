@@ -5,7 +5,7 @@ kind: ConfigMap
 apiVersion: v1
 metadata:
   name: am-config
-  namespace: default
+  namespace: forgerock
 data:
 #  openam.fqdn:  http://openam.example.com:80/openam
 #  openam.cookiedomain: .example.

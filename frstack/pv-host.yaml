@@ -7,6 +7,7 @@ kind: PersistentVolume
 apiVersion: v1
 metadata:
   name: data01
+  namespace: forgerock
 spec:
   capacity:
     storage: 1Gi
@@ -21,6 +22,7 @@ kind: PersistentVolume
 apiVersion: v1
 metadata:
   name: data02
+  namespace: forgerock
 spec:
   capacity:
     storage: 2Gi
@@ -35,6 +37,7 @@ kind: PersistentVolume
 apiVersion: v1
 metadata:
   name: data03
+  namespace: forgerock
 spec:
   capacity:
     storage: 1Gi
@@ -43,4 +46,3 @@ spec:
   hostPath:
     path: "/tmp/kube/data03"
   persistentVolumeReclaimPolicy: Recycle
-
